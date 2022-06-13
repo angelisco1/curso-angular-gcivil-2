@@ -1,0 +1,24 @@
+.meme {
+  position: relative;
+  width: 400px;
+}
+
+.meme > img {
+  width: 100%;
+}
+
+.meme > p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+}
+
+.meme .arriba {
+  top: 0;
+}
+
+.meme .abajo {
+  bottom: 0;
+}
