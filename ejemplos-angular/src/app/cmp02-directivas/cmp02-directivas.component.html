@@ -1,0 +1,46 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+
+<p [ngClass]="{completa: tarea.completada}">
+  {{tarea.titulo}}
+  <button type="button" (click)="completarTarea()">
+    {{tarea.completada ? 'Deshacer' : 'Hacer'}} tarea
+  </button>
+</p>
+
+<p [ngStyle]="{color: colorLetra, backgroundColor: colorFondo}">El texto de color amarillo y el fondo negro</p>
+
+<input type="text" [(ngModel)]="colorLetra">
+
+<select [(ngModel)]="colorFondo">
+  <option value="blue">Azul</option>
+  <option value="green">Verde</option>
+  <option value="black">Negro</option>
+</select>
+
+<h3>Estructurales</h3>
+
+<!-- <button type="button" (click)="cambiarTema(true)" *ngIf="!darkMode">Activar darkMode 🌜</button> -->
+<!-- <button type="button" (click)="cambiarTema(false)" *ngIf="darkMode; else btnDarkMode">Activar lightMode 🌞</button>
+
+<ng-template #btnDarkMode>
+  <button type="button" (click)="cambiarTema(true)">Activar darkMode 🌜</button>
+</ng-template> -->
+
+<div *ngIf="darkMode; then btnLightMode else btnDarkMode"></div>
+
+<ng-template #btnLightMode>
+  <button type="button" (click)="cambiarTema(false)">Activar lightMode 🌞</button>
+</ng-template>
+
+<ng-template #btnDarkMode>
+  <button type="button" (click)="cambiarTema(true)">Activar darkMode 🌜</button>
+</ng-template>
+
+<!-- <button>{{darkMode ? 'Activar lightMode' : 'Activar darkMode'}}</button> -->
+
+<ul>
+  <li *ngFor="let dato of listaDatos; let pos = index; let primero = first; let ultimo = last; let par = even"
+    [ngClass]="{primero: primero, ultimo: ultimo, par: par, impar: !par}">{{pos}}: {{dato}}</li>
+</ul>

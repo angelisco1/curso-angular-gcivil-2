@@ -1,0 +1,19 @@
+.completa {
+  text-decoration: line-through;
+}
+
+.primero {
+  border-top: 1px solid black;
+}
+
+.ultimo {
+  border-bottom: 1px solid black;
+}
+
+.par {
+  background-color: lightgray;
+}
+
+.impar {
+  background-color: lightyellow;
+}
