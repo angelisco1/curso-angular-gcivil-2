@@ -2,6 +2,11 @@
 
 <h3>De atributo</h3>
 
+<p appMarcar>El texto aparece marcado cuando pasas el ratón por encima</p>
+<p appMarcar="red">El texto aparece marcado cuando pasas el ratón por encima</p>
+<p appMarcar="blue">El texto aparece marcado cuando pasas el ratón por encima</p>
+<p appMarcar="orange">El texto aparece marcado cuando pasas el ratón por encima</p>
+
 <p [ngClass]="{completa: tarea.completada}">
   {{tarea.titulo}}
   <button type="button" (click)="completarTarea()">
@@ -14,9 +19,10 @@
 <input type="text" [(ngModel)]="colorLetra">
 
 <select [(ngModel)]="colorFondo">
-  <option value="blue">Azul</option>
+  <option *ngFor="let color of colores" [value]="color.value">{{color.texto}}</option>
+  <!-- <option value="blue">Azul</option>
   <option value="green">Verde</option>
-  <option value="black">Negro</option>
+  <option value="black">Negro</option> -->
 </select>
 
 <h3>Estructurales</h3>
@@ -44,3 +50,13 @@
   <li *ngFor="let dato of listaDatos; let pos = index; let primero = first; let ultimo = last; let par = even"
     [ngClass]="{primero: primero, ultimo: ultimo, par: par, impar: !par}">{{pos}}: {{dato}}</li>
 </ul>
+
+<div [ngSwitch]="colorFondo">
+  <ng-container *ngFor="let color of colores">
+    <p *ngSwitchCase="color.value">El color seleccionado es {{color.texto}}</p>
+  </ng-container>
+  <!-- <p *ngSwitchCase="'blue'">El color seleccionado es azul</p>
+  <p *ngSwitchCase="'green'">El color seleccionado es verde</p>
+  <p *ngSwitchCase="'black'">El color seleccionado es negro</p> -->
+  <p *ngSwitchDefault>No se ha seleccionado ni azul, ni verde, ni negro.</p>
+</div>

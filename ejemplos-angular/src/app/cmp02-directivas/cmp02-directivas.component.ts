@@ -14,6 +14,8 @@ class Tarea {
   }
 }
 
+type Color = { texto: string, value: string }
+
 
 @Component({
   selector: 'app-cmp02-directivas',
@@ -23,6 +25,12 @@ class Tarea {
 export class Cmp02DirectivasComponent implements OnInit {
   colorLetra: string = 'yellow'
   colorFondo: string = 'black'
+
+  colores: Array<Color> = [
+    { texto: 'azul', value: 'blue' },
+    { texto: 'verde', value: 'green' },
+    { texto: 'negro', value: 'black' },
+  ]
   // tarea: Tarea = {
   //   texto: 'Tarea 1',
   //   completada: false
@@ -36,6 +44,8 @@ export class Cmp02DirectivasComponent implements OnInit {
     'Dato 3',
     'Dato 4'
   ]
+
+
 
   constructor() { }
 

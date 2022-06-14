@@ -1,0 +1,10 @@
+<h2>Input y Output</h2>
+<div [ngStyle]="{display: 'flex', justifyContent: 'space-evenly'}">
+  <app-sugus color="orange" sabor="naranja"></app-sugus>
+  <app-sugus color="yellow" sabor="limón"></app-sugus>
+  <app-sugus color="blue" sabor="piña"></app-sugus>
+  <app-sugus [color]="sugusFresa.color" [sabor]="sugusFresa.sabor"></app-sugus>
+</div>
+
+<app-cv-form [datosCV]="datosCV" (datosCambiados)="cambiarDatosCV($event)"></app-cv-form>
+<app-cv-preview [datosCV]="datosCV"></app-cv-preview>

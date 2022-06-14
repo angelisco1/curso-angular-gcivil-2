@@ -1,0 +1,23 @@
+<h2>Pipes</h2>
+
+<div>
+  <h3>{{producto.nombre}} ({{producto.precio}})</h3>
+  <p>Fecha: {{producto.fechaLanzamiento}}</p>
+  <p>{{producto.descripcion}}</p>
+</div>
+
+<div>
+  <h3>{{producto.nombre | titlecase}} ({{producto.precio | descuento:50 | currency:'EUR':undefined:undefined:'es'}})
+  </h3>
+  <p>Fecha: {{producto.fechaLanzamiento | date:'fullDate':undefined:'es' | titlecase}}</p>
+  <p>{{producto.descripcion | slice:0:200}}...</p>
+</div>
+
+<pre>{{producto | json}}</pre>
+
+<!-- <p>{{promiseUsers | async | json}}</p> -->
+<p>{{usuarios | json}}</p>
+
+<ul>
+  <li *ngFor="let usuario of promiseUsers | async">{{usuario.name}}</li>
+</ul>
