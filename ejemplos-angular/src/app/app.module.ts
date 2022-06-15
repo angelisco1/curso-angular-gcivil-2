@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -15,7 +15,10 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { DescuentoPipe } from './cmp04-pipes/descuento.pipe';
 import { Cmp05ReferenciasComponent } from './cmp05-referencias/cmp05-referencias.component';
-import { ModalComponent } from './cmp05-referencias/modal/modal.component'
+import { ModalComponent } from './cmp05-referencias/modal/modal.component';
+import { Cmp07FormulariosComponent } from './cmp07-formularios/cmp07-formularios.component';
+import { ReactivoComponent } from './cmp07-formularios/reactivo/reactivo.component';
+import { PlantillaComponent } from './cmp07-formularios/plantilla/plantilla.component';
 
 
 registerLocaleData(localeEs, 'es')
@@ -33,11 +36,15 @@ registerLocaleData(localeEs, 'es')
     Cmp04PipesComponent,
     DescuentoPipe,
     Cmp05ReferenciasComponent,
-    ModalComponent
+    ModalComponent,
+    Cmp07FormulariosComponent,
+    ReactivoComponent,
+    PlantillaComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,14 @@
+<h3>De plantilla</h3>
+
+<form (ngSubmit)="login(formLogin)" #formLogin="ngForm">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [ngModel]="datosLogin.email" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [ngModel]="datosLogin.password" required>
+  </div>
+  <button type="submit" [disabled]="formLogin.invalid">Login</button>
+  <button type="submit">Login</button>
+</form>

@@ -8,6 +8,7 @@ import { ModalComponent } from './modal/modal.component';
 })
 export class Cmp05ReferenciasComponent implements OnInit {
   @ViewChild(ModalComponent) modal: ModalComponent | null = null
+  @ViewChild('modal2') modal2: ModalComponent | null = null
 
   constructor() { }
 
@@ -34,5 +35,10 @@ export class Cmp05ReferenciasComponent implements OnInit {
 
   cambiarVolumen(video: HTMLVideoElement, event: any) {
     video.volume = Number(event.target.value) / 100
+  }
+
+  muestraVideo() {
+    this.modal?.abrirModal()
+    this.modal2?.abrirModal()
   }
 }
