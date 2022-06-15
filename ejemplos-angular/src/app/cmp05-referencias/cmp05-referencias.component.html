@@ -1,0 +1,15 @@
+<h2>Referencias</h2>
+
+<video src="assets/video.mp4" width="200" #video1></video>
+<button *ngIf="video1.paused; else btnPause" type="button" (click)="play(video1)">Play</button>
+
+<ng-template #btnPause>
+  <button type="button" (click)="pause(video1)">Pause</button>
+</ng-template>
+
+<button type="button" (click)="setFullscreen(video1)">Fullscreen</button>
+<input type="range" [value]="video1.volume * 100" (input)="cambiarVolumen(video1, $event)">
+
+<app-modal></app-modal>
+
+<button>Mostrar video</button>

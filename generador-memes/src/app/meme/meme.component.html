@@ -1,0 +1,5 @@
+<div class="meme" *ngIf="meme">
+  <p class="arriba" [ngStyle]="{color: meme.color}">{{meme.texto1 | uppercase}}</p>
+  <img [src]="meme.urlImagen" alt="Un meme">
+  <p class="abajo" [ngStyle]="{color: meme.color}">{{meme.texto2 | uppercase}}</p>
+</div>

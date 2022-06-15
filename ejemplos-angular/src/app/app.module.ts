@@ -13,7 +13,9 @@ import { CvPreviewComponent } from './cmp03-input-y-output/cv-preview/cv-preview
 import { Cmp04PipesComponent } from './cmp04-pipes/cmp04-pipes.component';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
-import { DescuentoPipe } from './cmp04-pipes/descuento.pipe'
+import { DescuentoPipe } from './cmp04-pipes/descuento.pipe';
+import { Cmp05ReferenciasComponent } from './cmp05-referencias/cmp05-referencias.component';
+import { ModalComponent } from './cmp05-referencias/modal/modal.component'
 
 
 registerLocaleData(localeEs, 'es')
@@ -29,7 +31,9 @@ registerLocaleData(localeEs, 'es')
     CvFormComponent,
     CvPreviewComponent,
     Cmp04PipesComponent,
-    DescuentoPipe
+    DescuentoPipe,
+    Cmp05ReferenciasComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

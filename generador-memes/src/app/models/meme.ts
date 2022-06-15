@@ -3,7 +3,8 @@ export class Meme {
     public urlImagen: string,
     public texto1: string,
     public texto2: string,
-    public id: number) {
+    public id: number,
+    public color: string) {
 
   }
 }
