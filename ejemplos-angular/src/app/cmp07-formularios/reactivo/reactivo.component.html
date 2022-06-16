@@ -4,14 +4,17 @@
   <div>
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" formControlName="nombre">
+    <app-errores *ngIf="getMostrarErrores('nombre')" [errores]="getErrores('nombre')"></app-errores>
   </div>
   <div>
     <label for="email">Email:</label>
     <input type="email" id="email" formControlName="email">
+    <app-errores *ngIf="getMostrarErrores('email')" [errores]="getErrores('email')"></app-errores>
   </div>
   <div>
     <label for="password">Password:</label>
     <input type="password" id="password" formControlName="password">
+    <app-errores *ngIf="getMostrarErrores('password')" [errores]="getErrores('password')"></app-errores>
   </div>
   <button type="submit" [disabled]="form.invalid">Registro</button>
   <button type="submit">Registro</button>

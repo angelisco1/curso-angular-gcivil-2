@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { passwordMasSegura, tieneMayusculas } from '../validations/mayus.validator';
 
 @Component({
@@ -19,6 +19,17 @@ export class ReactivoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  // get mostrarErroresNombre(): boolean | undefined {
+  //   return this.form.get('nombre')?.invalid && this.form.get('nombre')?.dirty
+  // }
+  getMostrarErrores(campo: string): boolean | undefined {
+    return this.form.get(campo)?.invalid && this.form.get(campo)?.dirty
+  }
+
+  getErrores(campo: string): ValidationErrors | null | undefined {
+    return this.form.get(campo)?.errors
   }
 
   registro() {

@@ -19,6 +19,12 @@ import { ModalComponent } from './cmp05-referencias/modal/modal.component';
 import { Cmp07FormulariosComponent } from './cmp07-formularios/cmp07-formularios.component';
 import { ReactivoComponent } from './cmp07-formularios/reactivo/reactivo.component';
 import { PlantillaComponent } from './cmp07-formularios/plantilla/plantilla.component';
+import { Cmp06ServiciosComponent } from './cmp06-servicios/cmp06-servicios.component';
+import { CmpAComponent } from './cmp06-servicios/cmp-a/cmp-a.component';
+import { CmpBComponent } from './cmp06-servicios/cmp-b/cmp-b.component';
+import { Cmp08ObservablesComponent } from './cmp08-observables/cmp08-observables.component';
+import { SuscripcionComponent } from './cmp08-observables/suscripcion/suscripcion.component';
+import { ErroresComponent } from './cmp07-formularios/errores/errores.component';
 
 
 registerLocaleData(localeEs, 'es')
@@ -40,13 +46,21 @@ registerLocaleData(localeEs, 'es')
     Cmp07FormulariosComponent,
     ReactivoComponent,
     PlantillaComponent,
+    Cmp06ServiciosComponent,
+    CmpAComponent,
+    CmpBComponent,
+    Cmp08ObservablesComponent,
+    SuscripcionComponent,
+    ErroresComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'Ajustes', useValue: { lang: 'es' } }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
