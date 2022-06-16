@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { UsuariosService } from 'src/app/cmp09-http/services/usuarios.service';
 import { passwordMasSegura, tieneMayusculas } from '../validations/mayus.validator';
 
 @Component({
@@ -10,7 +11,7 @@ import { passwordMasSegura, tieneMayusculas } from '../validations/mayus.validat
 export class ReactivoComponent implements OnInit {
   form: FormGroup;
 
-  constructor() {
+  constructor(private usuariosService: UsuariosService) {
     this.form = new FormGroup({
       nombre: new FormControl('', Validators.required),
       email: new FormControl('peter@gmail.com', [Validators.required, Validators.email]),
@@ -35,6 +36,13 @@ export class ReactivoComponent implements OnInit {
   registro() {
     console.log(this.form)
     console.log(this.form.value)
+    this.usuariosService.registro(this.form.value)
+      .subscribe({
+        next: (datos) => {
+          console.log(datos)
+          this.usuariosService.usuarioRegistrado$.emit()
+        }
+      })
   }
 
 }

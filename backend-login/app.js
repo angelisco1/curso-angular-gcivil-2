@@ -1,11 +1,13 @@
 const express = require('express')
 const axios = require('axios')
 const jwt = require('jsonwebtoken')
+const cors = require('cors')
 
 const SECRETO = "qwerty"
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 app.post('/login', (req, res) => {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UsuariosService } from 'src/app/cmp09-http/services/usuarios.service';
 
 @Component({
   selector: 'app-plantilla',
@@ -12,7 +13,7 @@ export class PlantillaComponent implements OnInit {
     password: ''
   }
 
-  constructor() { }
+  constructor(private usuariosService: UsuariosService) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +22,12 @@ export class PlantillaComponent implements OnInit {
     console.log(form)
     console.log(this.datosLogin)
     console.log(form.value)
+    this.usuariosService.login(form.value)
+      .subscribe({
+        next: (datos) => {
+          console.log(datos)
+        }
+      })
   }
 
 }

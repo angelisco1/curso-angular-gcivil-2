@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { ValidationErrors } from '@angular/forms';
 
 @Component({
@@ -6,13 +6,15 @@ import { ValidationErrors } from '@angular/forms';
   templateUrl: './errores.component.html',
   styleUrls: ['./errores.component.css']
 })
-export class ErroresComponent implements OnInit {
+export class ErroresComponent implements OnChanges {
   @Input() errores: ValidationErrors | null | undefined = null
   listaMensajes: Array<string> = []
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    this.listaMensajes = []
+
     if (this.errores) {
 
       Object.entries(this.errores).forEach((entry) => {

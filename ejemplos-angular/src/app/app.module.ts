@@ -25,7 +25,8 @@ import { CmpBComponent } from './cmp06-servicios/cmp-b/cmp-b.component';
 import { Cmp08ObservablesComponent } from './cmp08-observables/cmp08-observables.component';
 import { SuscripcionComponent } from './cmp08-observables/suscripcion/suscripcion.component';
 import { ErroresComponent } from './cmp07-formularios/errores/errores.component';
-
+import { Cmp09HttpComponent } from './cmp09-http/cmp09-http.component';
+import { HttpClientModule } from '@angular/common/http'
 
 registerLocaleData(localeEs, 'es')
 
@@ -52,11 +53,13 @@ registerLocaleData(localeEs, 'es')
     Cmp08ObservablesComponent,
     SuscripcionComponent,
     ErroresComponent,
+    Cmp09HttpComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: 'Ajustes', useValue: { lang: 'es' } }
