@@ -9,16 +9,25 @@ import { UsuariosService } from './services/usuarios.service';
 export class Cmp09HttpComponent implements OnInit {
   mostrarRegistro: boolean = false
   mostrarLogin: boolean = true
+  nombre: string = ''
 
   constructor(private usuariosService: UsuariosService) { }
 
   ngOnInit(): void {
-    this.usuariosService.usuarioRegistrado$.subscribe({
-      next: () => {
-        this.mostrarRegistro = false
-        this.mostrarLogin = true
-      }
-    })
+    this.usuariosService.usuarioRegistrado$
+      .subscribe({
+        next: () => {
+          this.mostrarRegistro = false
+          this.mostrarLogin = true
+        }
+      })
+
+    this.usuariosService.usuarioLogueado$
+      .subscribe({
+        next: (nombre: string) => {
+          this.nombre = nombre
+        }
+      })
   }
 
 

@@ -23,11 +23,7 @@ export class PlantillaComponent implements OnInit {
     console.log(this.datosLogin)
     console.log(form.value)
     this.usuariosService.login(form.value)
-      .subscribe({
-        next: (datos) => {
-          console.log(datos)
-        }
-      })
+      .subscribe()
   }
 
 }
