@@ -1,5 +1,8 @@
 <ng-container *ngIf="memes.length > 0; else noHayMemes">
-  <app-meme *ngFor="let memeObj of memes" [meme]="memeObj"></app-meme>
+  <div *ngFor="let memeObj of memes">
+    <app-meme [meme]="memeObj"></app-meme>
+    <a [routerLink]="['/memes', memeObj.id]">Ver información</a>
+  </div>
 </ng-container>
 
 <ng-template #noHayMemes>

@@ -1,4 +1,38 @@
 {
+  "memes": [
+    {
+      "texto1": "1234",
+      "texto2": "bbbb",
+      "color": "#0ad13c",
+      "urlImagen": "https://i.blogs.es/d86db0/meme-fry-1/450_1000.jpg",
+      "usuarioId": 2,
+      "id": 1
+    },
+    {
+      "texto1": "1111",
+      "texto2": "2222",
+      "color": "#ffffff",
+      "urlImagen": "https://i.blogs.es/d86db0/meme-fry-1/450_1000.jpg",
+      "id": 2,
+      "usuarioId": 1
+    },
+    {
+      "texto1": "abc",
+      "texto2": "def",
+      "color": "#ddbbbb",
+      "urlImagen": "https://as01.epimg.net/epik/imagenes/2018/11/16/portada/1542384053_864693_1542384302_noticia_normal.jpg",
+      "usuarioId": 1,
+      "id": 3
+    },
+    {
+      "texto1": "asdasd",
+      "texto2": "adadsa",
+      "color": "#843939",
+      "urlImagen": "https://i.blogs.es/d86db0/meme-fry-1/450_1000.jpg",
+      "usuarioId": 1,
+      "id": 4
+    }
+  ],
   "usuarios": [
     {
       "nombre": "Charly Falco",

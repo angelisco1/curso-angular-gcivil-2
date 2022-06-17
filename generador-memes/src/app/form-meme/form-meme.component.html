@@ -1,0 +1,21 @@
+<h2>{{editando ? 'Edita el meme' : 'Crea un meme'}}</h2>
+
+<form [formGroup]="formMeme" (ngSubmit)="guardar()">
+  <div>
+    <label for="texto1">Texto 1</label>
+    <input type="text" id="texto1" formControlName="texto1">
+  </div>
+  <div>
+    <label for="texto2">Texto 2</label>
+    <input type="text" id="texto2" formControlName="texto2">
+  </div>
+  <div>
+    <label for="color">Color</label>
+    <input type="color" id="color" formControlName="color">
+  </div>
+  <div>
+    <label for="urlImagen">URL imagen</label>
+    <input type="text" id="urlImagen" formControlName="urlImagen">
+  </div>
+  <button type="submit">Guardar</button>
+</form>

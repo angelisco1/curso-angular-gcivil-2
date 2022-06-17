@@ -1,0 +1,6 @@
+<h2>Información del meme {{id}}</h2>
+<p>Pertenece al usuario: {{usuario}}</p>
+
+<app-meme [meme]="meme"></app-meme>
+
+<a [routerLink]="['/memes', id, 'editar']">Editar meme</a>
